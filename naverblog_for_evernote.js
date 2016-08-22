@@ -1,7 +1,7 @@
 var chkRun = false;
 
-function goBlog(id, no) {
-	location.href = "http://blog.naver.com/PostView.nhn?blogId=" + id + "&logNo=" + no
+function goBlog(blog_id, blog_logNo) {
+	location.href = "http://blog.naver.com/PostView.nhn?blogId=" + blog_id + "&logNo=" + blog_logNo;
 }
 
 if ("blog.naver.com" == location.host) {
@@ -9,20 +9,16 @@ if ("blog.naver.com" == location.host) {
 		href = location.href;
 	if (r.test(href)) {
 		chkRun = true;
-		var exec_r = r.exec(href),
-			blog_id = exec_r[3],
-			blog_logNo = exec_r[4];
-		goBlog(blog_id, blog_logNo);
+		var exec_r = r.exec(href);
+		goBlog(exec_r[3], exec_r[4]);
 	}
 } else {
 	var r = new RegExp(/^(http|https):\/\/(.+)\.blog\.me\/(.+)/),
 		href = location.href;
 	if (r.test(href)) {
 		chkRun = true;
-		var exec_r = r.exec(href),
-			blog_id = exec_r[1],
-			blog_logNo = exec_r[2];
-		goBlog(blog_id, blog_logNo);
+		var exec_r = r.exec(href);
+		goBlog(exec_r[1], exec_r[2]);
 	} else {
 		var el = document.getElementById("screenFrame");
 		if (el != null) {
@@ -30,15 +26,13 @@ if ("blog.naver.com" == location.host) {
 				src = el.src;
 			if (r.test(src)) {
 				chkRun = true;
-				var exec_r = r.exec(href),
-					blog_id = exec_r[1],
-					blog_logNo = exec_r[3];
-				goBlog(blog_id, blog_logNo);
+				var exec_r = r.exec(src);
+				goBlog(exec_r[1], exec_r[3]);
 			}
 		}
 	}
 }
 
 if (!chkRun) {
-	alert("개발자에게 문의하세요")
+	alert("개발자에게 문의하세요");
 };
