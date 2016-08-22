@@ -23,6 +23,19 @@ if ("blog.naver.com" == location.host) {
 			blog_id = exec_r[1],
 			blog_logNo = exec_r[2];
 		goBlog(blog_id, blog_logNo);
+	} else {
+		var el = document.getElementById("screenFrame");
+		if (el != null) {
+			var r = new RegExp(/blog.naver.com\/(.+)\?(.+)logNo=(.+)\&/),
+				src = el.src;
+			if (r.test(src)) {
+				chkRun = true;
+				var exec_r = r.exec(href),
+					blog_id = exec_r[1],
+					blog_logNo = exec_r[3];
+				goBlog(blog_id, blog_logNo);
+			}
+		}
 	}
 }
 
