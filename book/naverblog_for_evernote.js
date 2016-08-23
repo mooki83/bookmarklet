@@ -38,7 +38,7 @@ if ("blog.naver.com" == location.host) {
 					console.log("type4");
 					chkRun = true;
 					var exec_r = r.exec(src);
-					goBlog(exec_r[1], exec_r[3]);
+					goBlog(exec_r[2], exec_r[3]);
 				}
 			}
 		}
