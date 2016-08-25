@@ -22,7 +22,7 @@ function sendLinkToLink(url) {
 
 	//var sData = "payload=" + JSON.stringify({"channel":"#채널설정", "text":"텍스트 설정", "username":"사용자명 설정"});
 	var sData = "payload=" + JSON.stringify({"text":url});
-	var slackUrl = "https://hooks.slack.com/services/";	// 키값 설정
+	var slackUrl = "https://hooks.slack.com/services/";	// TODO: 키값 설정
 	httpRequest.onreadystatechange = function(){
 		if (httpRequest.readyState === 4) {
 			if (httpRequest.status === 200) {
