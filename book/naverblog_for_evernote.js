@@ -50,5 +50,10 @@ if ("blog.naver.com" == location.host) {
 }
 
 if (!chkRun) {
+	/*
+	if ( confirm("개발자에게 해당 URL을 보내시겠습니까?\n(보내주신 URL을 참고하여 버전업에 힘쓰도록 하겠습니다.)") ) {
+		
+	}
+	*/
 	alert("개발자에게 문의하세요");
 };
