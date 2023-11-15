@@ -58,7 +58,7 @@ async function getNaverLandDetail(comp) {
         g_stop = true;
     });  
 }
-
+(async function() {
 alert("!!?");
 var vv = [];
 var g_stop = false;
@@ -143,3 +143,4 @@ if ( window.__g_m_obj !== undefined ) {
         alert("읍, 면, 동을 선택하시기 바랍니다."); 
     } 
 }
+})()
