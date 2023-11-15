@@ -58,6 +58,8 @@ async function getNaverLandDetail(comp) {
         g_stop = true;
     });  
 }
+
+alert("!!?");
 var vv = [];
 var g_stop = false;
 if ( window.__g_m_obj !== undefined ) {
